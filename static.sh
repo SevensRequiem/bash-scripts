@@ -31,7 +31,7 @@ DNS1=${DNS1:-1.1.1.1}
 read -p "Enter DNS server 2 (default is 1.0.0.1): " DNS2
 DNS2=${DNS2:-1.0.0.1}
 
-NETPLAN_FILE="/etc/netplan/00-installer-config.yaml"
+NETPLAN_FILE="/etc/netplan/50-cloud-init.yaml"
 
 if [ ! -f "$NETPLAN_FILE" ]; then
     echo "Netplan configuration file not found!"
