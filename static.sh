@@ -31,15 +31,7 @@ DNS1=${DNS1:-1.1.1.1}
 read -p "Enter DNS server 2 (default is 1.0.0.1): " DNS2
 DNS2=${DNS2:-1.0.0.1}
 
-NETPLAN_FILE="/etc/netplan/50-cloud-init.yaml"
-
-if [ ! -f "$NETPLAN_FILE" ]; then
-    echo "Netplan configuration file not found!"
-    exit 1
-fi
-
-cp $NETPLAN_FILE "${NETPLAN_FILE}.bak"
-echo "Backup of current Netplan configuration created: ${NETPLAN_FILE}.bak"
+NETPLAN_FILE="/etc/netplan/01-static.yaml"
 
 cat > $NETPLAN_FILE <<EOL
 network:
